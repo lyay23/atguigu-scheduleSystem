@@ -1,0 +1,112 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;  /* 淡灰色背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for login form */
+ht {
+    text-align: center;
+    color: #333;
+}
+
+.tab {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.ltr {
+    height: 60px;
+    line-height: 60px;
+    padding: 10px 0;
+}
+
+.ipt {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.ipt:focus {
+    border-color: #66b3ff;  /* 边框颜色在输入框聚焦时变蓝 */
+    box-shadow: 0 0 8px rgba(102, 179, 255, 0.4);  /* 聚焦时增加阴影 */
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn1 {
+    background-color: #4CAF50;  /* 绿色按钮背景 */
+    color: white;
+    padding: 14px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn1:hover {
+    background-color: #45a049;  /* 悬停时按钮颜色稍微加深 */
+}
+
+.btn1:active {
+    background-color: #388e3c;  /* 按钮点击时颜色加深 */
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* Register link style */
+button a:hover {
+    text-decoration: underline;
+}
+
+/* Error message */
+#error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* For adjusting the width of the form */
+.tab {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Spacing and alignment */
+.ltr td {
+    padding: 10px;
+}
+
+.ipt {
+    padding: 12px;
+    font-size: 16px;
+}
+
+#usernameMsg , #userpwdMsg {
+color: aqua;
+}

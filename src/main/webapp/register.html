@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/register.js"></script>
+</head>
+<body>
+    <h1>欢迎使用日程管理系统</h1>
+    <h3>请注册</h3>
+
+    <form action="user/register" method="post" onsubmit="return checkForm()">
+
+        <table class="tab" cellspacing="0px">
+            <tr class="ltr">
+                <td>请输入账号</td>
+                <td>
+                    <input type="text" name="username" id="usernameInput" onblur="checkUsername()">
+                    <span id="usernameMsg" class="msg"></span>
+                </td>
+            </tr>
+            <tr class="ltr">
+                <td>请输入密码</td>
+                <td>
+                    <input type="password" name="userPwd" id="userPwdInput" onblur="checkUserPwd()">
+                    <span id="userPwdMsg" class="msg"></span>
+                </td>
+            </tr>
+            <tr class="ltr">
+                <td colspan="2" class="buttonContainer">
+                    <input type="submit" class="btn1" value="注册">
+                    <input type="reset" name="btn2" value="重置">
+                    <button class="btn1"><a href="/login.httml">去登录</a></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
