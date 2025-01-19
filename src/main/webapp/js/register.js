@@ -8,8 +8,18 @@ function checkUsername(){
         usernameMsg.innerText = "格式必须是5-10位数字或字母";
         return false;
     }
-    usernameMsg.innerText = "太聪明啦";
-    return true;
+    //格式正确通过之后，继续校验用户名称是否被占用
+    var xmltype = new XMLHttpRequest();
+    // 设置xmlHttpRequest的回调函数
+    xmltype.onreadystatechange = function() {
+        if (xmltype.readyState == 4 && xmltype.status == 200) {
+            usernameMsg.innerText = xmltype.responseText;
+        }
+    }
+   //设置请求方式和请求参数和请求资源路径
+    xmltype.open("GET","/user/checkUsernameUsed?username="+username)
+    //发送请求
+    xmltype.send();
 }
 
 // 校验密码
