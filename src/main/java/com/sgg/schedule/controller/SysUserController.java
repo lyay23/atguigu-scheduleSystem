@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -44,6 +45,10 @@ public class SysUserController extends BaseController {
 
               resp.sendRedirect("/loginUserPwdError.html");
           }else {
+              //登录成功之后，将登录的用户信息放入session域里面
+              HttpSession session = req.getSession();
+              session.setAttribute("sysUser", loginUser);
+
              resp.sendRedirect("/showSchedule.html");
           }
         //3.判断密码是否匹配

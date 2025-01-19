@@ -18,7 +18,7 @@ import java.io.IOException;
  * 查询  /schedule/delete
  * 日程的请求
  */
-@WebServlet("/schedule/*")
+@WebServlet(value = "/schedule/*")
 public class SysScheduleController extends BaseController {
 
 
