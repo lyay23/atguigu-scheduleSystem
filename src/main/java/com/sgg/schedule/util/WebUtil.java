@@ -9,16 +9,16 @@ package com.sgg.schedule.util;
  */
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sgg.schedule.common.Result;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.transform.Result;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 
+
 public class WebUtil {
-    private static final ObjectMapper objectMapper;
+    private static  ObjectMapper objectMapper;
 
     // 初始化objectMapper
     static {
@@ -49,10 +49,10 @@ public class WebUtil {
     public static void writeJson(HttpServletResponse response, Result result) {
         response.setContentType("application/json;charset=UTF-8");
         try {
-            String json = objectMapper.writeValueAsString(result);
-            response.getWriter().write(json);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            String info = objectMapper.writeValueAsString(result);
+            response.getWriter().write(info);
+        } catch (Exception e) {
+           e.printStackTrace();
         }
     }
 }

@@ -1,9 +1,13 @@
 package com.sgg.schedule.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sgg.schedule.common.Result;
+import com.sgg.schedule.common.ResultCodeEnum;
 import com.sgg.schedule.pojo.SysUser;
 import com.sgg.schedule.servlet.SysUserServlet;
 import com.sgg.schedule.servlet.impl.SysUserServiceImpl;
 import com.sgg.schedule.util.MD5Util;
+import com.sgg.schedule.util.WebUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -95,13 +99,14 @@ public class SysUserController extends BaseController {
         SysUser sysUser = userServlet.findByUsername(username);
 
         //如果有响应已经占用
-        String info="用户名可用";
+        Result result= Result.ok(null);//200
+
        if(null!=sysUser){
-         info="用户名被占用";
+         result=Result.build(null, ResultCodeEnum.USERNAME_USED);
+
        }
-        //如果没有就响应用户名可用
-        resp.setContentType("text/html;charset=utf-8");
-        resp.getWriter().print(info);
+        WebUtil.writeJson(resp,result);
+
 
     }
 }
